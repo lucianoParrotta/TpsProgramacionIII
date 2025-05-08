@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const {sequelize} = require('./../config/db.js');
-// Ruta absoluta al archivo
 
 const Paciente = sequelize.define('Paciente', {
   id: {
