@@ -5,12 +5,12 @@ const home = require('./routes/home.routes.js')
 dotenv.config()
 
 class Server {
-  constructor () {
+  constructor (template=process.env.TEMPLATE || 'ejs') {
     this.app = express()
     this.port = process.env.PORT || 3001
     this.middleware()
     //this.cors()
-    this.engine(process.env.TEMPLATE || 'ejs')
+    this.engine(template)
     this.rutas()
  
     
