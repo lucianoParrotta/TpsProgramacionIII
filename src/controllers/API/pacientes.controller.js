@@ -1,9 +1,9 @@
 // refactorizar a servicios
-const {getPacientesModel} = require('./../models/sqlite/paciente.model.js')
+const {getPacientesModel} = require('../../models/sqlite/paciente.model.js')
 
 // controladores
 const getPacientes = async (req, res) => {
-    console.log('GET Pacientes',await getPacientesModel());
+    // codigo de exito y codigo de error
     res.json(await getPacientesModel());
 }
 module.exports = {
