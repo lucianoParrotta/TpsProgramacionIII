@@ -7,6 +7,6 @@ connectDB().then(() => {
 }).catch((error) => {
   console.error('Error conectando a la base de datos:', error);
 });
-const server = new Server();
+const server = new Server("ejs");
 
 server.listen();

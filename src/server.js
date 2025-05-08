@@ -21,13 +21,12 @@ class Server {
   } */
 
   engine (template) {
-    if(template === 'ejs'){
-       this.app.set('view engine', 'ejs')
-       this.app.set('views', './src/views/ejs')
-    }else if(template === 'pug'){
-       this.app.set('view engine', 'pug')
-       this.app.set('views', './src/views/pug')
-    }
+     try{
+       this.app.set('view engine', template)
+       this.app.set('views', './src/views/'+template)
+     }catch (error) {
+        console.error('Error al configurar el motor de plantillas:', error)
+      }
 
   }
   middleware () {
