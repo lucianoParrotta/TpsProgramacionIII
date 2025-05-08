@@ -22,10 +22,12 @@ class Server {
 
   engine (template) {
      try{
+       require.resolve(template)
        this.app.set('view engine', template)
        this.app.set('views', './src/views/'+template)
      }catch (error) {
-        console.error('Error al configurar el motor de plantillas:', error)
+        console.log('Error al configurar el motor de plantillas:',template)
+        this.engine('ejs')
       }
 
   }
