@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            display: flex;
+            font-weight: 800;
+            padding: 1rem;
+        }
+
+        p{
+            display: flex;
+            padding: 1rem;
+        }
+
+        #contenedor{
+            display: flex;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="tituloPrincipal">Ejercicio 1</h1>
+    <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore odio sit vero magnam nihil ratione dicta quis asperiores. Sunt quisquam saepe ratione nostrum, dolorem quas maxime dolores asperiores doloribus?</p>
+    <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere possimus nemo voluptatem dolore aperiam iste numquam quia itaque. Sit repudiandae aperiam amet ut consequatur, labore libero ullam quaerat, harum aliquid officia nesciunt veritatis! Debitis fugiat modi fugit, eaque consequatur magnam. Quae voluptate tempore vero officiis incidunt aspernatur doloribus aliquam voluptatem doloremque itaque animi fugit ad impedit explicabo obcaecati ex, eum facere et labore modi nam sequi dolores! Sit deserunt voluptates nobis vel, temporibus illum natus saepe beatae id nesciunt reiciendis non ipsum dolorum hic illo tenetur quasi dolorem dolore eligendi nam dolores laudantium. Ipsum rerum omnis ratione et suscipit quisquam laboriosam ipsam cumque cupiditate quasi. Illum, ratione molestiae velit est laboriosam magnam aspernatur distinctio nesciunt numquam labore rem, sit doloremque id, cum consequatur? Sunt veniam eos ex vitae ullam temporibus quod, facere aliquam, cupiditate itaque ea ratione nobis mollitia est nesciunt tenetur corrupti deserunt, excepturi minus amet aliquid facilis. Sequi officiis minima voluptatem enim? Architecto accusamus est adipisci nostrum minus iure nisi sunt unde ipsum impedit cumque ex, mollitia aut. Officiis, perferendis, nemo blanditiis error natus, at dolores totam nisi culpa et similique harum labore ut quod numquam fuga maxime! Ipsam adipisci dignissimos cupiditate modi itaque repellat, delectus vel molestiae recusandae ex a consequatur iusto, ullam dolorem, necessitatibus doloremque quasi velit. Ex atque possimus maxime aspernatur rerum consequuntur. Pariatur provident est incidunt tenetur veritatis odit ipsa, atque sequi praesentium rem dolorem repudiandae quaerat cumque exercitationem, esse blanditiis sunt sit facere accusamus consectetur unde. Molestiae iure veritatis eveniet animi deserunt labore quasi voluptates consequuntur vitae eaque, facere nostrum! Sed quasi reiciendis hic nisi ab consequatur nam delectus vel enim repellat inventore odit, possimus optio ea non debitis voluptatibus provident assumenda voluptate iste corrupti. Dolore, magni voluptates praesentium maiores, nulla sapiente porro earum sit officiis sequi doloribus repellat amet. Itaque, quam sunt.</p>
+    <div id="contenedor">
+        <ul>
+            <li>cafeteras</li>
+            <li>propiedades</li>
+            <li>humo</li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tituloPrincipal = document.getElementById('tituloPrincipal');
+            const parrafo = document.getElementsByClassName('parrafo');
+            const elementos = document.querySelectorAll('#contenedor li');
+
+            //cambiar el titulo
+            tituloPrincipal.innerText = 'Ejercicio 1 - titulo modificado con Js';
+
+            //cambiar el color de todos los parrafos
+            for(let p of parrafo){
+                p.style.color = 'red';
+            }
+        
+            //agregar texto a cada elemento de la lista
+            elementos.forEach(li =>{
+                li.innerText += ' (agregado con js)'
+            })
+        });
+    </script>
+</body>
+</html>

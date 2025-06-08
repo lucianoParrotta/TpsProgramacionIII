@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+    <style>
+        .resaltado{
+            background: yellow;
+            font-weight: bold;
+        }
+
+        .ocultar{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut hic eius illum fuga quis fugiat. Eveniet illum voluptas nam sequi ipsum molestiae dolorum voluptates soluta, fuga nisi doloremque repellendus esse nostrum facilis voluptatem illo, culpa et! Commodi repellat nemo atque, ipsum repellendus corrupti explicabo fuga? Tempora maxime minus numquam unde, id, qui ratione quibusdam a, eum omnis excepturi quidem veniam! Autem est maxime suscipit repudiandae ea reprehenderit. Reprehenderit eveniet corporis deleniti a, eaque non, et perspiciatis, repudiandae voluptatibus aspernatur tenetur. Non asperiores et, omnis delectus porro quaerat corrupti, rerum nihil dolore sed voluptatibus dolorem soluta optio sit accusantium itaque voluptates voluptas iure quas nobis ad, excepturi tenetur cupiditate quibusdam. Ea, aperiam vel? Corrupti, labore sed. Ipsam porro harum ipsum aliquid ab nam mollitia eveniet quibusdam. Ullam magnam, officia laudantium rem tempora voluptatum soluta nesciunt tenetur? Distinctio ullam aut odit numquam sequi explicabo eligendi. Harum maiores vitae, sint voluptate alias cupiditate ipsa, recusandae ratione cum corrupti a. Fugit, sunt amet? Quibusdam, minus! Esse iste error quos aliquid soluta architecto, libero molestiae doloremque unde, expedita placeat autem voluptatem ea laudantium repellendus itaque iure modi, dolores odit eum necessitatibus tempora! Libero voluptates eius a, quidem temporibus fugiat, accusantium quibusdam unde nobis cumque soluta.</p>
+    <p class="parrafo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, numquam. Itaque excepturi ea velit tempora, incidunt earum a, molestias cumque expedita aliquam autem cupiditate voluptatem doloribus quo est possimus tenetur quod quis, in recusandae. Minus distinctio sint ut vel aperiam corporis harum praesentium fugiat libero earum ea, quis deserunt cupiditate! Nostrum sapiente tempore natus magni architecto ipsum aliquid saepe sed maiores iusto perferendis, adipisci dignissimos quod sit temporibus? Sed, doloribus. Numquam, illum libero illo itaque nisi nostrum velit odio aliquam minus nemo quaerat voluptas rem laboriosam similique maxime aperiam asperiores, blanditiis quidem hic cupiditate? Quidem velit explicabo vel, rerum laborum dolorum, facere suscipit, earum labore ipsum assumenda non adipisci cum sit quod perspiciatis quis vitae nobis cupiditate autem magnam consequatur? Aspernatur quod impedit quis mollitia repellendus ab adipisci commodi consectetur totam amet recusandae esse iste quasi dolores qui officiis debitis incidunt autem deserunt accusantium saepe consequuntur libero, ex optio. Debitis iste quas voluptate error repellendus aspernatur fugiat porro odio dolor earum repellat molestiae sit distinctio repudiandae ullam, tempora eaque aliquam. Laudantium consequatur voluptatem totam, assumenda laborum quibusdam fugiat eaque culpa et quae iste vel odio, ipsa vero. Ipsam error aut saepe veniam sunt tempore! Magnam reprehenderit incidunt repellat saepe vitae.</p>
+    <p class="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aliquam repudiandae iste laboriosam adipisci laudantium mollitia quibusdam reprehenderit unde atque! Molestiae, eaque minus! Corporis accusamus nihil voluptatem inventore deleniti veniam?</p>
+
+    <button id="resaltado">resaltado</button>
+    <button id="ocultar">ocultar</button>
+
+    <script>
+        const resaltado = document.getElementById('resaltado');
+        const ocultar = document.getElementById('ocultar');
+        const parrafo = document.querySelectorAll('.parrafo');
+        
+
+        resaltado.addEventListener('click', () => {
+            parrafo.forEach(p =>{
+                p.classList.add('resaltado');
+            });
+        })
+
+        ocultar.addEventListener('click', () => {
+            parrafo.forEach(p =>{
+                p.classList.toggle('ocultar');
+            });
+            
+        })
+        
+    </script>
+</body>
+</html>

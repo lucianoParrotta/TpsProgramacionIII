@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+    <style>
+        .completado{
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        ul{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>lista de tareas</h1>
+    <form id="form-box">
+        <input type="text" id="entradaTexto" placeholder="Escribe la tarea">
+        <button type="submit" id="btn-enviar">Enviar</button>
+    </form>
+    <ul id="listaTareas">
+
+    </ul>
+
+    <script>
+        const formulario = document.getElementById('form-box');
+        const entradaTexto = document.getElementById('entradaTexto')
+        const lista = document.getElementById('listaTareas');
+
+        formulario.addEventListener('submit', function(event){
+            event.preventDefault();
+            const texto = entradaTexto.value;
+            if(texto.trim() !== ''){
+                const nuevoLi = document.createElement('li');
+                nuevoLi.innerText = texto;
+
+                lista.appendChild(nuevoLi);
+
+                entradaTexto.value = '';
+            }
+
+        });
+
+        lista.addEventListener('click', function(event){
+            event.target.classList.toggle('completado');
+        });
+    </script>
+</body>
+</html>

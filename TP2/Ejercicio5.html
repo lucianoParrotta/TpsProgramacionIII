@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+    <style>
+        .error{
+            color: red;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="formulario">
+        <div>
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="nombre">
+            <div class="error" id="error-nombre"></div>
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input type="email" id="email">
+            <div class="error" id="error-email"></div>
+        </div>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad">
+            <div class="error" id="error-edad"></div>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const formulario = document.getElementById('formulario');
+        const nombre = document.getElementById('nombre');
+        const email = document.getElementById('email');
+        const edad = document.getElementById('edad');
+
+        const errorNombre = document.getElementById('error-nombre');
+        const errorEmail = document.getElementById('error-email');
+        const errorEdad = document.getElementById('error-edad');
+
+        formulario.addEventListener('submit', function(event){
+            event.preventDefault();
+
+            let hayErrores = false;
+
+            // Limpiar mensajes anteriores
+            errorNombre.textContent = "";
+            errorEmail.textContent = "";
+            errorEdad.textContent = "";
+
+            //nombre
+            if(nombre.value.trim() === ''){
+                errorNombre.textContent = "el nombre es obligatorio";
+                hayErrores = true;
+            }
+
+            //mail
+            if(email.value.trim() === ''){
+                errorEmail.textContent = "el email es obligatorio";
+                hayErrores = true;
+            }else if(!email.value.includes('@')){
+                errorEmail.textContent = "formato incorreto, debe incluir @"
+                hayErrores = true;
+            }
+            
+            //edad
+            if(edad.value.trim() === ''){
+                errorEdad.textContent = "el nombre es obligatorio";
+                hayErrores = true;
+            }
+            else if(parseInt(edad.value) <= 18){
+                errorEdad.textContent = "La edad debe ser mayor a 18";
+                hayErrores = true;
+            }
+
+            if(!hayErrores){
+                alert("Formulario enviado correctamente.");
+                formulario.reset();
+            }
+
+        });
+    </script>
+</body>
+</html>
