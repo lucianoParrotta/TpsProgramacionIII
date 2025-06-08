@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%- title %></title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico/favicon.ico">
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">Clínica Salud+</div>
+    <div class="navbar-links">
+      <a href="/local/turnos">Inicio</a>
+      <a href="/local/turnos/nuevo">Nuevo turno</a>
+      <a href="/local/pacientes">Gestión de pacientes</a>
+      <a href="/logout" class="btn-logout">Cerrar sesión</a>
+    </div>
+  </nav>
+
+  <main>
+    <%- body %>
+  </main>
+
+</body>
+</html>

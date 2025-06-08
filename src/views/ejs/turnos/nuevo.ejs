@@ -1,0 +1,28 @@
+<% layout('layout') %>
+
+<h1>Crear Nuevo Turno</h1>
+
+<% if (typeof error !== 'undefined') { %>
+  <p style="color: red;"><%= error %></p>
+<% } %>
+
+<form action="/local/turnos" method="POST">
+  <label for="fecha">Fecha:</label><br>
+  <input type="date" id="fecha" name="fecha" value="<%= valores?.fecha || '' %>" required><br>
+
+  <label for="hora">Hora:</label><br>
+  <input type="time" id="hora" name="hora" value="<%= valores?.hora || '' %>" required><br>
+
+  <label for="pacienteId">Paciente:</label>
+  <select id="pacienteId" name="pacienteId" required>
+    <option value="">-- Seleccione un paciente --</option>
+    <% pacientes.forEach(p => { %>
+      <option value="<%= p.id %>" <%= valores.pacienteId == p.id ? 'selected' : '' %>>
+        <%= p.nombre %> <%= p.apellido %>
+      </option>
+    <% }) %>
+  </select>
+
+  <button type="submit" class="boton boton-verde">Guardar Turno</button>
+  <a href="/local/turnos" class="boton">Volver</a>
+</form>
